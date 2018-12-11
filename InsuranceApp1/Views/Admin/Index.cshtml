@@ -1,0 +1,48 @@
+﻿
+@{
+	ViewBag.Title = "Index";
+}
+
+@using InsuranceApp1.ViewModels
+@model List<CustomerInfoVm>
+
+<div class="row no-gutters m-3">
+	<div class="col-lg-12 mx-auto shadow">
+		<div class="card-header text-center  bg-primary">
+			<h1 class="m-0>">Quotes issued</h1>
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-lg-2 m-2">
+					<h2>First Name</h2>
+				</div>
+				<div class="col-lg-2 m-2">
+					<h2>Last Name</h2>
+				</div>
+				<div class="col-lg-3 m-2">
+					<h2>Email Address</h2>
+				</div>
+				<div class="col-lg-3 m-2">
+					<h2>Quote</h2>
+				</div>
+			</div>
+			@foreach (var customerInfo in Model)
+			{
+				<div class="row border-bottom">
+					<div class="col-lg-2 m-2">
+						@customerInfo.FirstName
+					</div>
+					<div class="col-lg-2 m-2">
+						@customerInfo.LastName
+					</div>
+					<div class="col-lg-3 m-2">
+						@customerInfo.EmailAddress
+					</div>
+					<div class="col-lg-3 m-2">
+						<p>$@customerInfo.Quote /month</p>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</div>
